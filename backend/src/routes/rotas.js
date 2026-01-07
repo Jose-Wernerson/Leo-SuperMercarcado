@@ -4,6 +4,11 @@ const router = express.Router();
 // Mock temporário
 let rotas = [];
 
+// GET /rotas - Listar todas
+router.get('/', (req, res) => {
+	res.json(rotas);
+});
+
 // POST /rotas
 router.post('/', (req, res) => {
 	const { nome, data, motorista, clientes } = req.body;

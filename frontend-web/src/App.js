@@ -14,19 +14,30 @@ import Configuracoes from './pages/Configuracoes';
 import LandingPage from './pages/LandingPage';
 import './styles/global.css';
 
+
 function App() {
-	// Simples controle de login fake
-	const [logado, setLogado] = React.useState(true);
+	// Controle de login
+	const [logado, setLogado] = React.useState(false);
+	// Controle se o usuário já viu a landing
+	const [viuLanding, setViuLanding] = React.useState(() => {
+		return localStorage.getItem('viuLanding') === 'true';
+	});
+
+
+	// Marca que o usuário viu a landing ao acessar / ou /home
+	function handleLandingVisit() {
+		localStorage.setItem('viuLanding', 'true');
+		setViuLanding(true);
+	}
 
 	return (
 		<Router>
 			<Routes>
-				{/* Landing Page - Rota Pública */}
-				<Route path="/home" element={<LandingPage />} />
-				
 				{/* Sistema - Rotas Protegidas */}
 				<Route path="/sistema/*" element={
-					!logado ? (
+					!viuLanding ? (
+						<Navigate to="/" />
+					) : !logado ? (
 						<Login onLogin={() => setLogado(true)} />
 					) : (
 						<Box sx={{ display: 'flex', minHeight: '100vh' }}>
@@ -55,10 +66,14 @@ function App() {
 						</Box>
 					)
 				} />
-				
-				{/* Redirecionar raiz para landing page */}
-				<Route path="/" element={<Navigate to="/home" />} />
-				<Route path="*" element={<Navigate to="/home" />} />
+
+
+				{/* Landing Page - Rotas Públicas */}
+				<Route path="/" element={<LandingPage onVisit={handleLandingVisit} />} />
+				<Route path="/home" element={<LandingPage onVisit={handleLandingVisit} />} />
+
+				{/* Qualquer outra rota vai para a landing page */}
+				<Route path="*" element={<Navigate to="/" />} />
 			</Routes>
 		</Router>
 	);

@@ -1,7 +1,10 @@
 import React from 'react';
 import '../styles/landing.css';
 
-const LandingPage = () => {
+const LandingPage = ({ onVisit }) => {
+  React.useEffect(() => {
+    if (onVisit) onVisit();
+  }, [onVisit]);
   return (
     <div className="landing-page">
       {/* Header */}
@@ -131,6 +134,9 @@ const LandingPage = () => {
           <p className="instagram-subtitle">
             Fique por dentro das ofertas e novidades do Leo Supermercado
           </p>
+          
+          
+          {/* Feed do Instagram - temporariamente desabilitado */}
           <div className="instagram-content">
             <a 
               href="https://www.instagram.com/leosupermercado_/" 
@@ -141,9 +147,19 @@ const LandingPage = () => {
               <div className="instagram-icon">📱</div>
               <h3>@leosupermercado_</h3>
               <p>Clique para seguir e ver nossas ofertas!</p>
-              <button className="instagram-button">
-                Seguir no Instagram
-              </button>
+            </a>
+          </div>
+          
+          {/* Link para seguir */}
+          <div className="instagram-follow">
+            <a 
+              href="https://www.instagram.com/leosupermercado_/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="instagram-button"
+            >
+              <span className="instagram-button-icon">📱</span>
+              Seguir @leosupermercado_
             </a>
           </div>
         </div>
