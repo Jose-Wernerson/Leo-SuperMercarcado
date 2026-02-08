@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Leo-SuperMercarcado/static/css/main.7acecc61.css",
+    "main.js": "/Leo-SuperMercarcado/static/js/main.1a26944e.js",
+    "static/media/logo-leo.png": "/Leo-SuperMercarcado/static/media/logo-leo.eb98d0b03dc430458463.png",
+    "index.html": "/Leo-SuperMercarcado/index.html",
+    "main.7acecc61.css.map": "/Leo-SuperMercarcado/static/css/main.7acecc61.css.map",
+    "main.1a26944e.js.map": "/Leo-SuperMercarcado/static/js/main.1a26944e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acecc61.css",
+    "static/js/main.1a26944e.js"
+  ]
+}
