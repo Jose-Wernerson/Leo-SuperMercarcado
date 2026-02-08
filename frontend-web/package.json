@@ -2,10 +2,13 @@
   "name": "leo-super-mercado-frontend-web",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://jose-wernerson.github.io/Leo-SuperMercarcado",
   "main": "src/App.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -20,7 +23,8 @@
     "react-router-dom": "^6.21.0"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "gh-pages": "^5.0.0"
   },
   "browserslist": [
     ">0.2%",
