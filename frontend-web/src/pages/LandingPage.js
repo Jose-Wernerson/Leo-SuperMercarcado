@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/landing.css';
+import logo from '../assets/logo-leo.png';
 
 const LandingPage = ({ onVisit }) => {
   React.useEffect(() => {
@@ -11,7 +12,7 @@ const LandingPage = ({ onVisit }) => {
       <header className="header">
         <div className="container">
           <div className="logo-section">
-            <img src="/logo192.png" alt="Leo Supermercado" className="logo" />
+            <img src={logo} alt="Leo Supermercado" className="logo" />
             <div className="brand">
               <h1>Leo Supermercado</h1>
               <p className="slogan">Qualidade e economia para sua família!</p>
@@ -216,7 +217,7 @@ const LandingPage = ({ onVisit }) => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <img src="/logo192.png" alt="Leo Supermercado" className="footer-logo" />
+              <img src={logo} alt="Leo Supermercado" className="footer-logo" />
               <p>Leo Supermercado</p>
               <p className="footer-slogan">Qualidade e economia para sua família!</p>
             </div>
