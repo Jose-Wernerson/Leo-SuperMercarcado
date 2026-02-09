@@ -1,8 +1,25 @@
 {
-  "buildCommand": "cd frontend-web && npm install && npm run build",
-  "outputDirectory": "frontend-web/build",
-  "installCommand": "cd frontend-web && npm install",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend-web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/frontend-web/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend-web/index.html"
+    }
   ]
 }
