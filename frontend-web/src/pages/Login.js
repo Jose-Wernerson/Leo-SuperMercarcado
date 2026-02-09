@@ -117,7 +117,7 @@ export default function Login({ onLogin }) {
 						• superleo / Superleo1.
 					</Typography>
 					<Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-						• gerente / gerente123
+						• vendedor / vendedor123
 					</Typography>
 				</Box>
 			</Paper>
