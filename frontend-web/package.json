@@ -2,7 +2,6 @@
   "name": "leo-super-mercado-frontend-web",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://jose-wernerson.github.io/Leo-SuperMercarcado",
   "main": "src/App.js",
   "scripts": {
     "start": "react-scripts start",
